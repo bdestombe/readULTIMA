@@ -20,16 +20,16 @@ calibration some discretizations. Good practice to keep it all together
 
 This should be considered step 1 of data processsing. This netCDF-file can be
 used to create an actual dataset, including coordinates complying with
-netCDF conventions CF. cfconventions.org/cf-conventions/cf-conventions.html
+netCDF conventions CF. <cfconventions.org/cf-conventions/cf-conventions.html>
 
 Vertical temperature profiles can use 'timeSeriesProfile', chp 5.2 of
 cfconventions. Having a single spatial coordinate and a height above surface
 attribute, one file per section.
 
-Next steps:
+Steps for further processing / archiving:
 - data was recorded for the entire cable. split this netCDF file into sections
     when needed
-- Add meta data according to CF conventions
+- Add meta data according to CF conventions per splitter NETCDF file. 
 
 
 # Usage
@@ -47,4 +47,4 @@ ds_disk = xr.open_dataset(os.path.join(path_nc, fn_nc))
 import matplotlib.pyplot as plt
 plt.imshow(ds['TMP']._variable._data.T[1500:], vmin=3, vmax=20)
 ```
-
+More plotting examples on the xarray website

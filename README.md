@@ -30,3 +30,21 @@ Next steps:
 - data was recorded for the entire cable. split this netCDF file into sections
     when needed
 - Add meta data according to CF conventions
+
+
+# Usage
+This script makes use of the beatiful xarray package (<xarray.pydata.org>).
+
+1. Fill in the "User input" section, halfway the script.
+2. A netCDF file is stored for further processing
+3. Or plot directly, using xarray:
+```python
+# Read the same netCDF file
+ds_disk = xr.open_dataset(os.path.join(path_nc, fn_nc))
+
+
+# plot
+import matplotlib.pyplot as plt
+plt.imshow(ds['TMP']._variable._data.T[1500:], vmin=3, vmax=20)
+```
+

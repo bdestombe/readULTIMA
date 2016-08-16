@@ -33,7 +33,7 @@ Steps for further processing / archiving:
 
 
 # Usage
-This script makes use of the beautiful xarray package (<xarray.pydata.org>).
+This script makes use of the beautiful xarray package (<http://xarray.pydata.org>).
 
 1. Fill in the "User input" section, halfway the script.
 2. A netCDF file is stored for further processing

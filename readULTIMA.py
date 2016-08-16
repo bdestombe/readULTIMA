@@ -86,7 +86,12 @@ def read_meta(filename, sep):
 def find_dimensions(filename):
     # Returns nitem and nx
     with open(filename) as fh:
-        doc = xmltodict.parse(fh.read())[u'logs'][u'log']
+        doc_ = xmltodict.parse(fh.read())
+
+    if u'wellLogs' in doc_.keys():
+        doc = doc_[u'wellLogs'][u'wellLog']
+    else:
+        doc = doc_[u'logs'][u'log']
 
     return (len(doc[u'logCurveInfo']), len(doc[u'logData']['data']))
 
